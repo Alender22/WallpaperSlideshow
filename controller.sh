@@ -1,0 +1,1 @@
+env DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/python3 /home/lucas/Projects/repoProjects/WallpaperSlideshow/setRandomWallpaper.py
