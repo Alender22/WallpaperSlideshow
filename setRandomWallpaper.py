@@ -47,6 +47,7 @@ def getRandomElement(compList):
     return compList[rnd]
 
 def setBackgroundToFile(fileLocation):
+    os.system(f"gsettings set org.gnome.desktop.background picture-options scaled")
     os.system(f"gsettings set org.gnome.desktop.background picture-uri-dark {fileLocation}")
     os.system(f"gsettings set org.gnome.desktop.background picture-uri {fileLocation}")
 
