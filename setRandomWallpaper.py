@@ -24,7 +24,8 @@ def getLocation():
     return rootPath
 
 def getFilesInFolder(folder):
-    return os.listdir(folder)
+    fileNames = os.listdir(folder)
+    return fileNames.sort()
 
 def getRandomElement(compList):
     seedTime = time.time()
