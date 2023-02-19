@@ -25,7 +25,9 @@ def getLocation():
 
 def getFilesInFolder(folder):
     fileNames = os.listdir(folder)
-    return fileNames.sort()
+    fileNames.sort()
+    print(fileNames)
+    return fileNames
 
 def getRandomElement(compList):
     seedTime = time.time()
