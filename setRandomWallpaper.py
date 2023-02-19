@@ -29,11 +29,20 @@ def getFilesInFolder(folder):
     return fileNames
 
 def getRandomElement(compList):
-    seedTime = time.time()
-    seedTime = int((seedTime - (seedTime % 1))/50)
+    rnd = None
+    startTime = time.time()
     
-    random.seed(seedTime) 
-    rnd = random.randint(0, len(compList) - 1)
+    with open("seedLog.txt", "w") as file:
+        for i in range(1000):
+            seedTime = int((startTime - (startTime % 1))/50)
+            startTime += 60
+            
+            random.seed(seedTime)
+            randVal = random.randint(0, len(compList) - 1)
+            if rnd == None:     
+                rnd = randVal
+            file.write(f"index: {i} -- {compList[randVal]}\n")
+
 
     return compList[rnd]
 
