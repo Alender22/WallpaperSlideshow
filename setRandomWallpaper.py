@@ -27,7 +27,9 @@ def getFilesInFolder(folder):
     return os.listdir(folder)
 
 def getRandomElement(compList):
-    random.seed(time.time())
+    seedTime = time.time()
+    seedTime = seedTime - (seedTime % 1)
+    random.seed(seedTime)
     rnd = random.randint(0, len(compList) - 1)
     return compList[rnd]
 
