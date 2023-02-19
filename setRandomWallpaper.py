@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import os
 import random
+import time
+import random
 
 LOCATION = ""
 SUBFOLDER = "wallpapers/"
@@ -25,6 +27,7 @@ def getFilesInFolder(folder):
     return os.listdir(folder)
 
 def getRandomElement(compList):
+    random.seed(time.time())
     rnd = random.randint(0, len(compList) - 1)
     return compList[rnd]
 
