@@ -29,8 +29,13 @@ def getFilesInFolder(folder):
 def getRandomElement(compList):
     seedTime = time.time()
     seedTime = int((seedTime - (seedTime % 1))/50)
-    random.seed(seedTime)
+    
+    random.seed(seedTime) 
     rnd = random.randint(0, len(compList) - 1)
+
+    with open("seedLog.txt", "w") as file:
+        file.write(f"{seedTime}\n{rnd}")
+
     return compList[rnd]
 
 def setBackgroundToFile(fileLocation):
