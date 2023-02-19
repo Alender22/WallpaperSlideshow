@@ -26,7 +26,6 @@ def getLocation():
 def getFilesInFolder(folder):
     fileNames = os.listdir(folder)
     fileNames.sort()
-    print(fileNames)
     return fileNames
 
 def getRandomElement(compList):
@@ -35,9 +34,6 @@ def getRandomElement(compList):
     
     random.seed(seedTime) 
     rnd = random.randint(0, len(compList) - 1)
-
-    with open("seedLog.txt", "w") as file:
-        file.write(f"{seedTime}\n{rnd}")
 
     return compList[rnd]
 
