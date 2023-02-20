@@ -34,7 +34,7 @@ def getRandomElement(compList):
     
     with open("seedLog.txt", "w") as file:
         for i in range(1000):
-            seedTime = int((startTime - (startTime % 1))/50)
+            seedTime = int((startTime - (startTime % 1))/1)
             startTime += 60
             
             random.seed(seedTime)
@@ -47,7 +47,6 @@ def getRandomElement(compList):
 
 def setBackgroundToFile(fileLocation):
     commands = [f"gsettings set org.gnome.desktop.background picture-options scaled",
-                f"gsettings set org.gnome.desktop.background picture-options spanned",
                 f"gsettings set org.gnome.desktop.background picture-uri-dark {fileLocation}",
                 f"gsettings set org.gnome.desktop.background picture-uri {fileLocation}"]
     [os.system(command) for command in commands]
