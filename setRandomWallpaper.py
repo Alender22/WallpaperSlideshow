@@ -43,13 +43,14 @@ def getRandomElement(compList):
                 rnd = randVal
             file.write(f"index: {i} -- {compList[randVal]}\n")
 
-
     return compList[rnd]
 
 def setBackgroundToFile(fileLocation):
-    os.system(f"gsettings set org.gnome.desktop.background picture-options scaled")
-    os.system(f"gsettings set org.gnome.desktop.background picture-uri-dark {fileLocation}")
-    os.system(f"gsettings set org.gnome.desktop.background picture-uri {fileLocation}")
+    commands = [f"gsettings set org.gnome.desktop.background picture-options scaled",
+                f"gsettings set org.gnome.desktop.background picture-options spanned",
+                f"gsettings set org.gnome.desktop.background picture-uri-dark {fileLocation}",
+                f"gsettings set org.gnome.desktop.background picture-uri {fileLocation}"]
+    [os.system(command) for command in commands]
 
 if __name__ == "__main__":
     main()
