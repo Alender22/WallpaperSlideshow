@@ -34,7 +34,7 @@ def getRandomElement(compList):
     
     with open("seedLog.txt", "w") as file:
         for i in range(1000):
-            seedTime = int((startTime - (startTime % 1))/1)
+            seedTime = int((startTime - (startTime % 1))/5)
             startTime += 60
             
             random.seed(seedTime)
